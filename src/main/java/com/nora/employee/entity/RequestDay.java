@@ -1,17 +1,17 @@
 package com.nora.employee.entity;
 
 public class RequestDay {
-    int days;
+    double days;
 
     public RequestDay() {
 
     }
 
-    public int getDays() {
+    public double getDays() {
         return days;
     }
 
-    public void setDays(int days) {
+    public void setDays(double days) {
         this.days = days;
     }
 }

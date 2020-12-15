@@ -18,16 +18,7 @@ public class NormalEmployeeWorkAndVacation implements WorkAndVacation  {
         }
         return e;
     }
-    @Override
-    public Employee TakeVacation(double days, Employee e) {
-        if(e.getVacationDays()<days){
-            System.out.println("can not take leave");
-        }
-        else {
-            e.setVacationDays(e.getVacationDays()-days);
-        }
-        return e;
-    }
+
 
     @Override
     public String toString() {

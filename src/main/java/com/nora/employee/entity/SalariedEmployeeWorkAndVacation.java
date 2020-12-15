@@ -15,16 +15,7 @@ public class SalariedEmployeeWorkAndVacation implements WorkAndVacation{
             e.setWorkDays(days);
         }
         e.setVacationDays(Math.round((15.0/260.0)*e.getWorkDays()*100)/100);
-        return e;
-    }
-    @Override
-    public Employee TakeVacation(double days, Employee e) {
-        if(e.getVacationDays()<days){
-            System.out.println("can not take leave");
-        }
-        else {
-            e.setVacationDays(e.getVacationDays()-days);
-        }
+        System.out.println((15.0/260.0)*e.getWorkDays());
         return e;
     }
 
