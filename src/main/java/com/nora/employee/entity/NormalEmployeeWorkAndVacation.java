@@ -10,11 +10,11 @@ public class NormalEmployeeWorkAndVacation implements WorkAndVacation  {
     public Employee Work(int days, Employee e) {
         if(days>=260){
             e.setWorkDays(260);
-            e.setVacationDays(Math.round((1.0/26.0)*e.getWorkDays()*100)/100);
+            e.setVacationDays((1.0/26.0)*e.getWorkDays());
         }
         else {
             e.setWorkDays(days);
-            e.setVacationDays(Math.round((1.0/26.0)*e.getWorkDays()*100)/100);
+            e.setVacationDays((1.0/26.0)*e.getWorkDays());
         }
         return e;
     }

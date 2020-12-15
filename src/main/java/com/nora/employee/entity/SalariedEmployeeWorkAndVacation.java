@@ -14,7 +14,7 @@ public class SalariedEmployeeWorkAndVacation implements WorkAndVacation{
         else {
             e.setWorkDays(days);
         }
-        e.setVacationDays(Math.round((15.0/260.0)*e.getWorkDays()*100)/100);
+        e.setVacationDays((15.0/260.0)*e.getWorkDays());
         System.out.println((15.0/260.0)*e.getWorkDays());
         return e;
     }
