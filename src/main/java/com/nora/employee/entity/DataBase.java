@@ -1,6 +1,8 @@
 package com.nora.employee.entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,11 +11,12 @@ import java.util.List;
 @Component
 public class DataBase {
 
-    NormalEmployeeWorkAndVacation normalEmployeeWorkAndVacation=new NormalEmployeeWorkAndVacation();
+    WorkAndVacation normalEmployeeWorkAndVacation =new NormalEmployeeWorkAndVacation();
 
-    ManagerWorkAndVacation managerWorkAndVacation=new ManagerWorkAndVacation();
-    @Autowired
-    SalariedEmployeeWorkAndVacation salariedEmployeeWorkAndVacation= new SalariedEmployeeWorkAndVacation();
+    WorkAndVacation managerWorkAndVacation=new ManagerWorkAndVacation();
+
+    WorkAndVacation salariedEmployeeWorkAndVacation= new SalariedEmployeeWorkAndVacation();
+
     private List<Employee> db=new ArrayList<>();
 
     public DataBase() {

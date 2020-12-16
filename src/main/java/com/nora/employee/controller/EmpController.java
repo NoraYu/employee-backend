@@ -34,7 +34,7 @@ public class EmpController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @PostMapping(value = {"/{id}/work"}, produces = "application/json")
+    @PutMapping(value = {"/{id}/work"}, produces = "application/json")
     public ResponseEntity<Employee> work(@PathVariable(name = "id") long id, @RequestBody RequestDay rq) {
         db.getDb().stream().filter(e -> e.getId() == id).collect(Collectors.toList()).forEach(employee -> employee.Work((int)rq.getDays()));
         Employee theEmp = new Employee();
@@ -46,16 +46,16 @@ public class EmpController {
         return new ResponseEntity<>(theEmp, HttpStatus.OK);
     }
 
-    @PostMapping(value = {"/{id}/vacation"}, produces = "application/json")
+    @PutMapping(value = {"/{id}/vacation"}, produces = "application/json")
     public ResponseEntity<Employee> takeVacation(@PathVariable(name = "id") long id, @RequestBody RequestDay rq) {
         db.getDb().stream().filter(e -> e.getId() == id).collect(Collectors.toList()).forEach(employee -> employee.TakeVacation(rq.getDays()));
         Employee theEmp = new Employee();
         for (Employee e : db.getDb()) {
             if (e.getId() == id) {
                 theEmp = e;
-            }}
+            }
+        }
             return new ResponseEntity<>(theEmp, HttpStatus.OK);
         }
-
     }
 

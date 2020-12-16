@@ -1,10 +1,12 @@
 package com.nora.employee.entity;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.io.Serializable;
 
-@Component
+@Component("normalEmployeeWorkAndVacation")
+
 public class NormalEmployeeWorkAndVacation implements WorkAndVacation  {
     @Override
     public Employee Work(int days, Employee e) {

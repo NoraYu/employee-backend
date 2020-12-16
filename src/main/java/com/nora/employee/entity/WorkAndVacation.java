@@ -1,5 +1,8 @@
 package com.nora.employee.entity;
 
+import org.springframework.stereotype.Component;
+
+
 public interface WorkAndVacation {
     Employee Work(int days, Employee e);
 //    public abstract Employee TakeVacation(double days, Employee e);
