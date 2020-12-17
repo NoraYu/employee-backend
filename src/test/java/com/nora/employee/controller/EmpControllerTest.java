@@ -101,4 +101,21 @@ class EmpControllerTest {
                 .andReturn();
     }
 
+    @Test
+    void checkVacationShouldWork() throws Exception {
+        List<Employee> list = new ArrayList<>();
+        Employee e1=new Employee();Employee e2=new Employee();
+        e1.setId(1);e1.setWorkDays(260); e1.setVacationDays(15);e1.setName("Nora");
+        e1.setWorkAndVacation(new SalariedEmployeeWorkAndVacation());
+        e2.setId(2);e2.setWorkDays(200);e2.setVacationDays(0);e2.setName("Jessie");
+        list.add(e1);list.add(e2);
+        when(db.getDb()).thenReturn(list);
+        RequestBuilder request=MockMvcRequestBuilders.get("/1/vday")
+                .contentType(MediaType.APPLICATION_JSON);
+        MvcResult result=mockMvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(content().json("15.0"))
+                .andReturn();
+    }
+
 }
